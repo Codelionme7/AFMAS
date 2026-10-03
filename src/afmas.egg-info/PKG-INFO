@@ -1,0 +1,14 @@
+Metadata-Version: 2.4
+Name: afmas
+Version: 0.1.0
+Summary: AFMAS — African Model Assessment System (Sovereign Safety Score)
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: click
+Requires-Dist: rich
+Requires-Dist: pandas
+Requires-Dist: pyyaml
+Requires-Dist: lm-eval[hf]
+
+# AFMAS
+African LLM Bias Detector 

@@ -1,0 +1,5 @@
+click
+rich
+pandas
+pyyaml
+lm-eval[hf]

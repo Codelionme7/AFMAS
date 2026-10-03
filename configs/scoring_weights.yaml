@@ -1,0 +1,9 @@
+linguistic:
+  weight: 0.45
+governance:
+  weight: 0.40
+auditability:
+  weight: 0.15
+thresholds:
+  sovereign_safe: 0.75
+  conditional: 0.55

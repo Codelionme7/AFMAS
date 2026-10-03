@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "afmas"
+version = "0.1.0"
+description = "AFMAS — African Model Assessment System (Sovereign Safety Score)"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "click",
+    "rich",
+    "pandas",
+    "pyyaml",
+    "lm-eval[hf]",
+]
+
+[project.scripts]
+afmas = "afmas.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
