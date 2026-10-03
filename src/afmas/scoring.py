@@ -22,33 +22,23 @@ def _load_weights():
     }
 
 def _extract_task_acc(task_results, task_name):
-    """Pull a metric in [0,1] from lm-eval results."""
     if not task_results:
         return None
     candidates = []
     for key, val in task_results.items():
         if not isinstance(val, dict):
             continue
-        # prefer exact match on task name
         if task_name.lower() not in str(key).lower() and str(key).lower() not in task_name.lower():
             continue
-        for metric in ("acc,none", "acc", "acc_norm,none", "acc_norm",
-                       "exact_match,none", "exact_match", "f1,none", "f1"):
-            if metric in val:
+        for mkey, mval in val.items():
+            mkey_l = str(mkey).lower()
+            if any(x in mkey_l for x in ("acc", "exact_match", "f1", "score")) and "stderr" not in mkey_l:
                 try:
-                    v = float(val[metric])
+                    v = float(mval)
                     if 0.0 <= v <= 1.0:
                         candidates.append(v)
                 except (TypeError, ValueError):
                     pass
-        # fallback: any float in [0,1]
-        for v in val.values():
-            try:
-                fv = float(v)
-                if 0.0 <= fv <= 1.0:
-                    candidates.append(fv)
-            except (TypeError, ValueError):
-                pass
     return max(candidates) if candidates else None
 
 def compute_sovereign_score(results: dict[str, Any]) -> dict[str, Any]:
