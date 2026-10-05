@@ -1,23 +1,51 @@
 [build-system]
-requires = ["setuptools>=61.0"]
+requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "afmas"
-version = "0.1.0"
-description = "AFMAS — African Model Assessment System (Sovereign Safety Score)"
+version = "0.1.1"
+description = "African Model Assessment System — Sovereign Safety Score for LLMs on African languages and governance norms"
 readme = "README.md"
 requires-python = ">=3.10"
-dependencies = [
-    "click",
-    "rich",
-    "pandas",
-    "pyyaml",
-    "lm-eval[hf]",
+license = {text = "MIT"}
+authors = [
+        {name = "Codelionme7"}
 ]
+keywords = [
+        "llm-evaluation",
+            "african-nlp",
+                "afrobench",
+                    "ai-safety",
+                        "governance",
+                            "sovereign-ai",
+                                "lm-eval"
+]
+classifiers = [
+        "Development Status :: 3 - Alpha",
+            "Intended Audience :: Science/Research",
+                "License :: OSI Approved :: MIT License",
+                    "Programming Language :: Python :: 3",
+                        "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+        "click>=8.1",
+            "rich>=13.0",
+                "pandas>=2.0",
+                    "pyyaml>=6.0",
+                        "lm-eval[hf]>=0.4.0",
+                            "transformers>=4.40",
+                                "torch",
+]
+
+[project.urls]
+Homepage = "https://github.com/Codelionme7/AFMAS"
+Repository = "https://github.com/Codelionme7/AFMAS"
+Issues = "https://github.com/Codelionme7/AFMAS/issues"
 
 [project.scripts]
 afmas = "afmas.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+]
