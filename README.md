@@ -54,3 +54,9 @@ If you work on African NLP, AI governance, or model evaluation, critical feedbac
 AFMAS: African Model Assessment System
 https://github.com/Codelionme7/AFMAS
 
+## Who this is for
+
+- African AI researchers and practitioners evaluating models for local deployment
+- Teams building or fine-tuning models on African languages
+- Policy, governance, and safety researchers who need transparent, Africa-specific metrics
+- Anyone who wants a reproducible Sovereign Safety Score instead of Western-only benchmarks
