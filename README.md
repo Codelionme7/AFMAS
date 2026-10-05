@@ -25,3 +25,17 @@ Most LLM evaluations are Western-centric. AFMAS answers a different question:
 ```bash
 pip install -e .
 bash scripts/demo.sh
+
+## Results so far (Cycle-1.1)
+
+All runs on CPU / GitHub Codespaces with `gpt2`.
+
+| Task                          | Linguistic | Governance | Auditability | Overall | Traffic Light      |
+|-------------------------------|------------|------------|--------------|---------|--------------------|
+| hellaswag (limit 5)           | 0.40       | 0.36       | 0.94         | 0.46    | RED – High Risk    |
+| afrimgsm_cot_eng_prompt_1     | 0.00       | 0.36       | 0.94         | 0.28    | RED – High Risk    |
+
+**Interpretation**
+- gpt2 is weak on both general reasoning and African governance probes — the system correctly flags it as High Risk.
+- Stronger and African-focused models are expected to score significantly higher on Linguistic and Governance.
+- These numbers are fully reproducible with `bash scripts/demo.sh`.
