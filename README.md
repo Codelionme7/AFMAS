@@ -39,3 +39,18 @@ All runs on CPU / GitHub Codespaces with `gpt2`.
 - gpt2 is weak on both general reasoning and African governance probes — the system correctly flags it as High Risk.
 - Stronger and African-focused models are expected to score significantly higher on Linguistic and Governance.
 - These numbers are fully reproducible with `bash scripts/demo.sh`.
+
+## Feedback & Collaboration
+
+This is Cycle-1.1. The goal is to make the Sovereign Safety Score useful for African AI deployment decisions.
+
+If you work on African NLP, AI governance, or model evaluation, critical feedback is welcome:
+
+- Open an issue
+- Suggest better probes or tasks
+- Run it on your models and share results
+
+## Citation
+AFMAS: African Model Assessment System
+https://github.com/Codelionme7/AFMAS
+
